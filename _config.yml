@@ -1,2 +1,3 @@
 title: Saifullah Anwar
-theme: slate
+theme: jekyll-theme-slate
+markdown: kramdown
