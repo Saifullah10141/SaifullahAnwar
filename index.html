@@ -3,149 +3,103 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Saifullah Anwar - Full-Stack Developer</title>
-  
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome -->
-  <script src="https://kit.fontawesome.com/a81368914c.js" crossorigin="anonymous"></script>
+  <title>Saifullah Anwar - Full-Stack Developer | Backend Specialist</title>
+  <meta name="description" content="Portfolio of Saifullah Anwar, Full-Stack Developer & Backend Specialist. Explore projects, GitHub stats, tech stack, skills, and contact information.">
+  <meta name="keywords" content="Saifullah Anwar, Full-Stack Developer, Backend Developer, Python, Node.js, React, GitHub, Portfolio">
+  <meta name="author" content="Saifullah Anwar">
 
-  <!-- Smooth Scroll -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/16.1.3/smooth-scroll.polyfills.min.js"></script>
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Saifullah Anwar - Full-Stack Developer">
+  <meta property="og:description" content="Portfolio of Saifullah Anwar, Full-Stack Developer & Backend Specialist. Explore projects, GitHub stats, tech stack, skills, and contact information.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://saifullah10141.github.io/">
+  <meta property="og:image" content="https://raw.githubusercontent.com/Saifullah10141/Saifullah10141/main/profile.png">
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://raw.githubusercontent.com/Saifullah10141/Saifullah10141/main/profile.png" type="image/png">
+
+  <!-- Tailwind CSS CDN for easy styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
-    /* =========================
-       Base Styles & Dark Theme
-    ========================= */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #0D1117;
-      color: #C9D1D9;
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
-    a { color: #7C3AED; text-decoration: none; transition: 0.3s; }
+    body { font-family: 'Fira Code', monospace; background-color: #0D1117; color: #C9D1D9; margin:0; padding:0; scroll-behavior: smooth; }
+    a { color: #7C3AED; transition: 0.3s; }
     a:hover { color: #00D9FF; }
-    h1, h2, h3, h4, h5 { color: #FFFFFF; margin-bottom: 1rem; }
-    img { max-width: 100%; border-radius: 10px; }
-    p { margin-bottom: 1rem; }
-    code, pre { background-color: #161B22; padding: 0.2rem 0.4rem; border-radius: 5px; font-family: 'Fira Code', monospace; }
-    pre { overflow-x: auto; }
-    table { width: 100%; border-collapse: collapse; margin: 2rem 0; }
-    th, td { border: 1px solid #30363d; padding: 0.5rem; text-align: center; }
-    th { background-color: #161B22; color: #00D9FF; }
-    blockquote { border-left: 4px solid #7C3AED; padding-left: 1rem; color: #8b949e; margin: 1rem 0; }
-
-    /* =========================
-       Container & Sections
-    ========================= */
-    .container { width: 90%; max-width: 1200px; margin: auto; padding: 2rem 0; }
-    section { margin: 4rem 0; }
-    .center { text-align: center; }
-
-    /* =========================
-       Buttons & Badges
-    ========================= */
-    .btn { display: inline-block; padding: 0.5rem 1rem; margin: 0.3rem; border-radius: 5px; background: linear-gradient(90deg,#7C3AED,#00D9FF); color: #fff; font-weight: bold; transition: 0.3s; }
-    .btn:hover { opacity: 0.8; transform: scale(1.05); }
-
-    /* =========================
-       Animations
-    ========================= */
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .fade-up { animation: fadeInUp 1s ease forwards; opacity: 0; }
-    .fade-up-delay { animation-delay: 0.5s; }
-    .fade-up-delay2 { animation-delay: 1s; }
-
-    /* Typing animation */
-    .typing {
-      font-family: 'Fira Code', monospace;
-      color: #A855F7;
-      font-size: 2rem;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 4px solid #A855F7;
-      width: 55ch; /* increased from 22ch */
-      animation: typing 4s steps(55), blink 0.75s step-end infinite alternate;
-      margin: 1rem auto;
-    }
-    @keyframes typing { from { width: 0 } to { width: 55ch } }
-
-    @keyframes blink { 50% { border-color: transparent } }
-
-    /* Wave animation */
-    .wave {
-      width: 100%;
-      height: 100px;
-      background: linear-gradient(90deg,#7C3AED,#00D9FF);
-      animation: wave 4s infinite linear;
-    }
-    @keyframes wave { 0% { transform: translateX(0); } 100% { transform: translateX(100%); } }
-
-    /* Profile image animation */
-    .profile-img { border-radius: 50%; animation: fadeInUp 1s ease forwards; }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      pre, table { font-size: 0.8rem; }
-    }
+    hr { border: 1px solid #30363D; margin: 2rem 0; }
+    /* Typing Effect */
+    #typing-container { font-size: 2rem; font-weight: bold; color: #A855F7; text-align:center; margin-top: 50px; min-height:3rem; }
+    /* Smooth scroll fade-in sections */
+    section { opacity:0; transform: translateY(20px); transition: 0.8s ease-out; }
+    section.visible { opacity:1; transform: translateY(0); }
   </style>
 </head>
 <body>
 
-  <!-- =========================
-       Header / Hero Section
-  ========================= -->
-  <header class="container center fade-up">
-    <div class="typing">
-      Hey, I'm Saifullah Anwar 👋 Full-Stack Developer | Backend Specialist
-    </div>
-    <div class="wave"></div>
-
-    <!-- Profile Badges -->
-    <p>
-      <img src="https://komarev.com/ghpvc/?username=Saifullah10141&label=Profile%20Views&color=blueviolet&style=for-the-badge" alt="Profile Views">
-      <img src="https://img.shields.io/github/followers/Saifullah10141?label=Followers&style=for-the-badge&color=7C3AED" alt="Followers">
-      <img src="https://img.shields.io/badge/Focus-Backend%20Development-00D9FF?style=for-the-badge" alt="Focus">
-      <img src="https://img.shields.io/badge/Available-For%20Hire-success?style=for-the-badge" alt="Available">
+<!-- Header with Animated Typing -->
+<header>
+  <div id="typing-container"></div>
+  <div>
+    <p class="text-center mt-4">
+      <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12&height=80&section=header&text=&fontSize=0" width="100%">
     </p>
-
-    <!-- Links -->
-    <p>
-      <a href="https://saifullahanwar.vercel.app" class="btn">🌐 Portfolio</a>
-      <a href="https://www.linkedin.com/in/saifullah-anwar" class="btn">💼 LinkedIn</a>
-      <a href="https://saifullahanwar.vercel.app/#contact" class="btn">📧 Hire Me</a>
+    <p class="text-center mt-2">
+      <img src="https://komarev.com/ghpvc/?username=Saifullah10141&label=Profile%20Views&color=blueviolet&style=for-the-badge" alt="Profile Views" />
+      <img src="https://img.shields.io/github/followers/Saifullah10141?label=Followers&style=for-the-badge&color=7C3AED" alt="Followers" />
+      <img src="https://img.shields.io/badge/Focus-Backend%20Development-00D9FF?style=for-the-badge" alt="Focus" />
+      <img src="https://img.shields.io/badge/Available-For%20Hire-success?style=for-the-badge" alt="Available" />
     </p>
-  </header>
+  </div>
+</header>
 
-  <!-- =========================
-       About Me Section
-  ========================= -->
-  <section class="container fade-up fade-up-delay">
-    <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:center;">
-      <img src="https://raw.githubusercontent.com/abhisheknaiidu/abhisheknaiidu/master/code.gif" alt="Coding" width="400" class="profile-img">
-      <div style="max-width:600px; margin-left:2rem;">
-        <h2>👨‍💻 About Me</h2>
-        <pre>
+<script>
+  const lines = [
+    "Hey, I'm Saifullah Anwar 👋",
+    "Full-Stack Developer | Backend Specialist",
+    "Building Scalable Systems 🚀",
+    "Open for Freelance & Full-Time Roles"
+  ];
+  let i = 0, j = 0, currentLine='', isDeleting=false, speed=100;
+  function type(){
+    const container = document.getElementById('typing-container');
+    if(!isDeleting){
+      currentLine = lines[i].substring(0,j+1);
+      j++;
+      container.innerHTML = currentLine;
+      if(j === lines[i].length){ isDeleting=true; setTimeout(type,1500); return; }
+    } else {
+      currentLine = lines[i].substring(0,j-1);
+      j--;
+      container.innerHTML = currentLine;
+      if(j===0){ isDeleting=false; i=(i+1)%lines.length; }
+    }
+    setTimeout(type,speed);
+  }
+  type();
+</script>
+
+<!-- About Me Section -->
+<section class="max-w-5xl mx-auto px-4 mt-10">
+  <div class="flex flex-col md:flex-row items-center">
+    <img src="https://raw.githubusercontent.com/abhisheknaiidu/abhisheknaiidu/master/code.gif" alt="Coding" class="w-80 rounded-lg mb-6 md:mb-0 md:mr-8">
+    <div>
+      <h2 class="text-3xl font-bold mb-4">👨‍💻 About Me</h2>
+      <pre class="bg-[#161B22] p-4 rounded-lg text-sm overflow-x-auto">
 class SaifullahAnwar:
-    def __init__(self):
-        self.role = "Full-Stack Developer"
-        self.focus = "Backend Architecture"
-        self.experience = "2+ years"
-        self.location = "Pakistan 🇵🇰"
-        self.available_for = ["Freelance", "Full-Time", "Contract"]
+    role = "Full-Stack Developer"
+    focus = "Backend Architecture"
+    experience = "2+ years"
+    location = "Pakistan 🇵🇰"
+    available_for = ["Freelance","Full-Time","Contract"]
 
     def get_skills(self):
         return {
-            "backend": ["Python", "PHP", "Node.js"],
-            "frontend": ["React", "Next.js", "TypeScript"],
-            "databases": ["MySQL", "Firebase"],
-            "specialties": ["API Development", "Authentication", "Integrations"]
+            "backend": ["Python","PHP","Node.js"],
+            "frontend": ["React","Next.js","TypeScript"],
+            "databases": ["MySQL","Firebase"],
+            "specialties": ["API Development","Authentication","Integrations"]
         }
 
     def current_status(self):
@@ -153,70 +107,110 @@ class SaifullahAnwar:
 
 me = SaifullahAnwar()
 print(me.current_status())
-        </pre>
-      </div>
+      </pre>
+      <p class="mt-4">
+        <a href="https://saifullahanwar.vercel.app" class="px-4 py-2 bg-[#7C3AED] rounded text-white mr-2">🌐 Portfolio</a>
+        <a href="https://www.linkedin.com/in/saifullah-anwar" class="px-4 py-2 bg-[#00D9FF] rounded text-black mr-2">💼 LinkedIn</a>
+        <a href="mailto:saifullahanwar00040@gmail.com" class="px-4 py-2 bg-green-500 rounded text-white">📧 Hire Me</a>
+      </p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- =========================
-       Tech Stack Section
-  ========================= -->
-  <section class="container fade-up fade-up-delay2 center">
-    <h2>🛠️ Tech Stack & Tools</h2>
-    <p>
-      <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white">
-      <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white">
-      <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
-      <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white">
-      <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white">
-      <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white">
-      <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white">
-      <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black">
-      <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white">
-      <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white">
-    </p>
-  </section>
+<hr>
 
-  <!-- =========================
-       GitHub Stats Section
-  ========================= -->
-  <section class="container center fade-up">
-    <h2>📊 GitHub Analytics</h2>
-    <p>
-      <img width="49%" src="https://github-readme-stats.vercel.app/api?username=Saifullah10141&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=00D9FF&icon_color=7C3AED&text_color=C9D1D9&count_private=true" alt="GitHub Stats">
-      <img width="49%" src="https://github-readme-streak-stats.herokuapp.com/?user=Saifullah10141&theme=tokyonight&hide_border=true&background=0D1117&stroke=00D9FF&ring=7C3AED&fire=00D9FF&currStreakLabel=00D9FF" alt="GitHub Streak">
-    </p>
-  </section>
+<!-- Tech Stack -->
+<section class="max-w-5xl mx-auto px-4 mt-10 text-center">
+  <h2 class="text-3xl font-bold mb-6">🛠️ Tech Stack & Tools</h2>
+  <div class="flex flex-wrap justify-center gap-4">
+    <!-- Languages -->
+    <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+    <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" />
+    <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+    <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
+    <!-- Backend & APIs -->
+    <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />
+    <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" />
+    <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white" />
+    <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" />
+    <img src="https://img.shields.io/badge/REST%20API-FF6C37?style=for-the-badge&logo=postman&logoColor=white" />
+    <!-- Frontend -->
+    <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" />
+    <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" />
+    <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
+  </div>
+</section>
 
-  <!-- =========================
-       Footer
-  ========================= -->
-  <footer class="container center fade-up">
-    <h2>🤝 Let's Connect & Collaborate</h2>
-    <p>
-      <a href="https://saifullahanwar.vercel.app" class="btn">🌐 Portfolio</a>
-      <a href="https://www.linkedin.com/in/saifullah-anwar" class="btn">💼 LinkedIn</a>
-      <a href="https://github.com/Saifullah10141" class="btn">GitHub</a>
-      <a href="mailto:saifullahanwar00040@gmail.com" class="btn">📧 Email</a>
-    </p>
-    <p><sub>⚡ Last Updated: February 2026</sub></p>
-  </footer>
+<hr>
 
-  <script>
-    // Initialize Smooth Scroll
-    const scroll = new SmoothScroll('a[href*="#"]', { speed: 800, speedAsDuration: true });
-    // Fade-in animation on scroll
-    const faders = document.querySelectorAll('.fade-up');
-    const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
-    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.classList.add('visible');
-        observer.unobserve(entry.target);
-      });
-    }, appearOptions);
-    faders.forEach(fader => { appearOnScroll.observe(fader); });
-  </script>
+<!-- GitHub Stats -->
+<section class="max-w-5xl mx-auto px-4 mt-10 text-center">
+  <h2 class="text-3xl font-bold mb-6">📊 GitHub Analytics</h2>
+  <div class="flex flex-col md:flex-row justify-center gap-4">
+    <img src="https://github-readme-stats.vercel.app/api?username=Saifullah10141&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=00D9FF&icon_color=7C3AED&text_color=C9D1D9&count_private=true" alt="GitHub Stats" class="md:w-1/2 rounded-lg">
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=Saifullah10141&theme=tokyonight&hide_border=true&background=0D1117&stroke=00D9FF&ring=7C3AED&fire=00D9FF&currStreakLabel=00D9FF" alt="GitHub Streak" class="md:w-1/2 rounded-lg">
+  </div>
+  <div class="flex flex-col md:flex-row justify-center gap-4 mt-4">
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Saifullah10141&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=00D9FF&text_color=C9D1D9&langs_count=8" alt="Top Languages" class="md:w-1/2 rounded-lg">
+    <img src="https://github-readme-activity-graph.vercel.app/graph?username=Saifullah10141&theme=tokyo-night&hide_border=true&bg_color=0D1117&color=00D9FF&line=7C3AED&point=00D9FF" alt="Activity Graph" class="md:w-1/2 rounded-lg">
+  </div>
+</section>
+
+<hr>
+
+<!-- Featured Projects -->
+<section class="max-w-5xl mx-auto px-4 mt-10">
+  <h2 class="text-3xl font-bold mb-6 text-center">🚀 Featured Projects</h2>
+  <div class="grid md:grid-cols-2 gap-6">
+    <!-- Example Project Card -->
+    <div class="bg-[#161B22] p-4 rounded-lg shadow-lg hover:shadow-2xl transition">
+      <h3 class="text-xl font-bold mb-2">🎓 University Management System</h3>
+      <a href="https://ums.iblogger.org">
+        <img src="https://github-readme-stats.vercel.app/api/pin/?username=Saifullah10141&repo=university-management-system&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=00D9FF&icon_color=7C3AED&text_color=C9D1D9" alt="UMS" class="rounded mb-2">
+      </a>
+      <p>Enterprise-grade platform with multi-factor authentication, WhatsApp & Email integration, 500+ active users.</p>
+      <p class="mt-2">Tech: <code>Python</code> <code>Flask</code> <code>MySQL</code> <code>Firebase</code></p>
+      <a href="https://ums.iblogger.org" class="inline-block mt-2 px-3 py-1 bg-[#00D9FF] text-black rounded">🌐 Live Demo</a>
+    </div>
+    <!-- Add more project cards similarly -->
+  </div>
+</section>
+
+<hr>
+
+<!-- Contact Section -->
+<section class="max-w-5xl mx-auto px-4 mt-10 text-center">
+  <h2 class="text-3xl font-bold mb-6">🤝 Let's Connect & Collaborate</h2>
+  <div class="flex flex-wrap justify-center gap-4 mb-4">
+    <a href="https://saifullahanwar.vercel.app" class="px-4 py-2 bg-[#00D9FF] rounded text-black">🌐 Portfolio</a>
+    <a href="https://www.linkedin.com/in/saifullah-anwar" class="px-4 py-2 bg-[#0077B5] rounded text-white">💼 LinkedIn</a>
+    <a href="https://github.com/Saifullah10141" class="px-4 py-2 bg-[#181717] rounded text-white">GitHub</a>
+    <a href="mailto:saifullahanwar00040@gmail.com" class="px-4 py-2 bg-[#EA4335] rounded text-white">📧 Email</a>
+  </div>
+  <p class="mt-4">⭐ Open for Freelance, Full-Time, and Collaborations</p>
+</section>
+
+<hr>
+
+<!-- Footer -->
+<footer class="text-center p-6 mt-10 bg-[#161B22]">
+  <p>💡 "Building the future, one commit at a time"</p>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12&height=50&section=footer" width="100%">
+  <p class="mt-2 text-sm">⚡ Last Updated: February 2026 | Thanks for visiting!</p>
+</footer>
+
+<script>
+  // Fade-in sections on scroll
+  const sections = document.querySelectorAll('section');
+  window.addEventListener('scroll', () => {
+    sections.forEach(sec => {
+      const rect = sec.getBoundingClientRect();
+      if(rect.top < window.innerHeight - 100){
+        sec.classList.add('visible');
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
