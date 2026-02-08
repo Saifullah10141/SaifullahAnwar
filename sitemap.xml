@@ -4,58 +4,15 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-  <!-- Main Portfolio Website -->
+  <!-- GitHub Pages - Main Profile Site -->
   <url>
-    <loc>https://saifullahanwar.vercel.app/</loc>
+    <loc>https://saifullah10141.github.io/</loc>
     <lastmod>2026-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Portfolio Sections -->
-  <url>
-    <loc>https://saifullahanwar.vercel.app/#home</loc>
-    <lastmod>2026-02-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://saifullahanwar.vercel.app/#about</loc>
-    <lastmod>2026-02-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://saifullahanwar.vercel.app/#skills</loc>
-    <lastmod>2026-02-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://saifullahanwar.vercel.app/#projects</loc>
-    <lastmod>2026-02-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://saifullahanwar.vercel.app/#experience</loc>
-    <lastmod>2026-02-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://saifullahanwar.vercel.app/#contact</loc>
-    <lastmod>2026-02-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Professional Profiles -->
+  <!-- GitHub Profile -->
   <url>
     <loc>https://github.com/Saifullah10141</loc>
     <lastmod>2026-02-09</lastmod>
@@ -64,10 +21,61 @@
   </url>
 
   <url>
+    <loc>https://github.com/Saifullah10141?tab=repositories</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Professional Profiles -->
+  <url>
     <loc>https://www.linkedin.com/in/saifullah-anwar</loc>
     <lastmod>2026-02-09</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Main Portfolio Website -->
+  <url>
+    <loc>https://saifullahanwar.vercel.app/</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://saifullahanwar.vercel.app/#home</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://saifullahanwar.vercel.app/#about</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://saifullahanwar.vercel.app/#skills</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://saifullahanwar.vercel.app/#projects</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://saifullahanwar.vercel.app/#contact</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <!-- Published Package -->
@@ -76,6 +84,14 @@
     <lastmod>2026-02-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+
+  <!-- Contact Methods -->
+  <url>
+    <loc>mailto:saifullahanwar00040@gmail.com</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
   </url>
 
 </urlset>
