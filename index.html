@@ -18,10 +18,8 @@
   <!-- Favicon -->
   <link rel="icon" href="https://raw.githubusercontent.com/Saifullah10141/Saifullah10141/main/profile.png" type="image/png">
 
-  <!-- Tailwind CSS CDN for easy styling -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Custom Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
@@ -29,8 +27,8 @@
     a { color: #7C3AED; transition: 0.3s; }
     a:hover { color: #00D9FF; }
     hr { border: 1px solid #30363D; margin: 2rem 0; }
-    /* Typing Effect */
-    #typing-container { font-size: 2rem; font-weight: bold; color: #A855F7; text-align:center; margin-top: 50px; min-height:3rem; }
+    /* Header typing effect */
+    #typing { font-size: 2rem; font-weight: bold; color: #A855F7; text-align:center; min-height:3rem; }
     /* Smooth scroll fade-in sections */
     section { opacity:0; transform: translateY(20px); transition: 0.8s ease-out; }
     section.visible { opacity:1; transform: translateY(0); }
@@ -38,14 +36,12 @@
 </head>
 <body>
 
-<!-- Header with Animated Typing -->
-<header>
-  <div id="typing-container"></div>
-  <div>
-    <p class="text-center mt-4">
-      <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12&height=80&section=header&text=&fontSize=0" width="100%">
-    </p>
-    <p class="text-center mt-2">
+<!-- Header with updated typing animation -->
+<header class="pt-10">
+  <div id="typing"></div>
+  <div class="text-center mt-4">
+    <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12&height=80&section=header&text=&fontSize=0" width="100%">
+    <p class="mt-2">
       <img src="https://komarev.com/ghpvc/?username=Saifullah10141&label=Profile%20Views&color=blueviolet&style=for-the-badge" alt="Profile Views" />
       <img src="https://img.shields.io/github/followers/Saifullah10141?label=Followers&style=for-the-badge&color=7C3AED" alt="Followers" />
       <img src="https://img.shields.io/badge/Focus-Backend%20Development-00D9FF?style=for-the-badge" alt="Focus" />
@@ -55,29 +51,44 @@
 </header>
 
 <script>
-  const lines = [
+  // Typing animation with highlight effect
+  const phrases = [
     "Hey, I'm Saifullah Anwar 👋",
     "Full-Stack Developer | Backend Specialist",
     "Building Scalable Systems 🚀",
     "Open for Freelance & Full-Time Roles"
   ];
-  let i = 0, j = 0, currentLine='', isDeleting=false, speed=100;
-  function type(){
-    const container = document.getElementById('typing-container');
-    if(!isDeleting){
-      currentLine = lines[i].substring(0,j+1);
-      j++;
-      container.innerHTML = currentLine;
-      if(j === lines[i].length){ isDeleting=true; setTimeout(type,1500); return; }
+  let phraseIndex = 0;
+  let letterIndex = 0;
+  let currentPhrase = '';
+  let isDeleting = false;
+  const typingSpeed = 100;
+  const eraseSpeed = 50;
+  const delayBetweenPhrases = 1500;
+
+  function typeEffect() {
+    const typingEl = document.getElementById('typing');
+    if(!isDeleting) {
+      currentPhrase = phrases[phraseIndex].substring(0, letterIndex + 1);
+      letterIndex++;
+      typingEl.innerHTML = `<span style="color:#00D9FF">${currentPhrase}</span>`;
+      if(letterIndex === phrases[phraseIndex].length) {
+        isDeleting = true;
+        setTimeout(typeEffect, delayBetweenPhrases);
+        return;
+      }
     } else {
-      currentLine = lines[i].substring(0,j-1);
-      j--;
-      container.innerHTML = currentLine;
-      if(j===0){ isDeleting=false; i=(i+1)%lines.length; }
+      currentPhrase = phrases[phraseIndex].substring(0, letterIndex - 1);
+      letterIndex--;
+      typingEl.innerHTML = `<span style="color:#00D9FF">${currentPhrase}</span>`;
+      if(letterIndex === 0) {
+        isDeleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+      }
     }
-    setTimeout(type,speed);
+    setTimeout(typeEffect, isDeleting ? eraseSpeed : typingSpeed);
   }
-  type();
+  typeEffect();
 </script>
 
 <!-- About Me Section -->
@@ -123,18 +134,15 @@ print(me.current_status())
 <section class="max-w-5xl mx-auto px-4 mt-10 text-center">
   <h2 class="text-3xl font-bold mb-6">🛠️ Tech Stack & Tools</h2>
   <div class="flex flex-wrap justify-center gap-4">
-    <!-- Languages -->
     <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
     <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" />
     <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
     <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
-    <!-- Backend & APIs -->
     <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />
     <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" />
     <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white" />
     <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" />
     <img src="https://img.shields.io/badge/REST%20API-FF6C37?style=for-the-badge&logo=postman&logoColor=white" />
-    <!-- Frontend -->
     <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" />
     <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" />
     <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
@@ -162,7 +170,6 @@ print(me.current_status())
 <section class="max-w-5xl mx-auto px-4 mt-10">
   <h2 class="text-3xl font-bold mb-6 text-center">🚀 Featured Projects</h2>
   <div class="grid md:grid-cols-2 gap-6">
-    <!-- Example Project Card -->
     <div class="bg-[#161B22] p-4 rounded-lg shadow-lg hover:shadow-2xl transition">
       <h3 class="text-xl font-bold mb-2">🎓 University Management System</h3>
       <a href="https://ums.iblogger.org">
@@ -172,7 +179,6 @@ print(me.current_status())
       <p class="mt-2">Tech: <code>Python</code> <code>Flask</code> <code>MySQL</code> <code>Firebase</code></p>
       <a href="https://ums.iblogger.org" class="inline-block mt-2 px-3 py-1 bg-[#00D9FF] text-black rounded">🌐 Live Demo</a>
     </div>
-    <!-- Add more project cards similarly -->
   </div>
 </section>
 
@@ -196,7 +202,7 @@ print(me.current_status())
 <footer class="text-center p-6 mt-10 bg-[#161B22]">
   <p>💡 "Building the future, one commit at a time"</p>
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12&height=50&section=footer" width="100%">
-  <p class="mt-2 text-sm">Thanks for visiting!</p>
+  <p class="mt-2 text-sm">⚡ Last Updated: February 2026 | Thanks for visiting!</p>
 </footer>
 
 <script>
